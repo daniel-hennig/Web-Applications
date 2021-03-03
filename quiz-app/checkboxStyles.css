@@ -1,0 +1,92 @@
+input[type=checkbox] {
+  display: none;
+  pointer-events: none;
+  max-width: 100%;
+}
+
+input[type=checkbox] + label {
+  font-size: .8em;
+  margin-left: 3.5em;
+}
+
+input[type=checkbox] + label svg {
+  fill: white;
+  stroke: #8e44ad;
+  stroke-width: 5;
+  width: 2em;
+  cursor: pointer;
+}
+
+input[type=checkbox] + label svg .box {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  fill: white;
+}
+
+input[type=checkbox] + label svg .check {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
+}
+
+input[type=checkbox] + label span {
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label .check {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset .3s linear;
+  transition: stroke-dashoffset .3s linear;
+}
+
+.reverse .box {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset .3s linear;
+  transition: stroke-dashoffset .3s linear;
+}
+
+.reverse .check {
+  stroke-dashoffset: 70;
+  -webkit-transition: stroke-dashoffset .3s linear;
+  transition: stroke-dashoffset .3s linear;
+}
+
+@media screen and (max-width: 570px) {
+  ul li, .options_Ul li {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 514px) {
+  input[type=checkbox] + label {
+    margin-left: 2.5em;
+  }
+}
+
+@media screen and (max-width: 496px) {
+  input[type=checkbox] + label {
+    margin-left: 2em;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  input[type=checkbox] + label {
+    margin-left: 1.25em;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  input[type=checkbox] + label {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 418px) {
+  input[type=checkbox] + label {
+    margin: 15px 0;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+}
+/*# sourceMappingURL=checkboxStyles.css.map */

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkboxStyles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="quiz-container" id="quiz">
+        <div class="cat-header" id="cat-header">
+            <h1><span>Choose</span> Categories</h1>
+            <div class="inner">
+                <input type="checkbox" name="category" value="html5" id="cb">
+                <label for="cb" id="checkbox">
+                    <svg viewBox="0 0 50 50">
+                        <g class="box" stroke="rgb(177, 177, 177)">
+                          <rect rx="7"/>
+                          <rect x="1.5" y="1.5" width="47" height="47" rx="5.5"/>
+                        </g>
+                        <path class="check" d="M168.057,176,180.1,188.045l7.9-7.9,3.324-3.324,12.186-12.186" transform="translate(-159 -151.342)"/>
+                      </svg>
+                      <span>HTML5</span>
+                </label>
+                
+                <input type="checkbox" name="category" value="css3" id="cb2">
+                <label for="cb2" id="checkbox2">
+                    <svg viewBox="0 0 50 50">
+                        <g class="box" stroke="rgb(177, 177, 177)">
+                          <rect rx="7"/>
+                          <rect x="1.5" y="1.5" width="47" height="47" rx="5.5"/>
+                        </g>
+                        <path class="check" d="M168.057,176,180.1,188.045l7.9-7.9,3.324-3.324,12.186-12.186" transform="translate(-159 -151.342)"/>
+                      </svg>
+                      <span>CSS3</span>
+                </label>
+                
+                <input type="checkbox" name="category" value="js" id="cb3">
+                <label for="cb3" id="checkbox3">
+                    <svg viewBox="0 0 50 50">
+                        <g class="box" stroke="rgb(177, 177, 177)">
+                          <rect rx="7"/>
+                          <rect x="1.5" y="1.5" width="47" height="47" rx="5.5"/>
+                        </g>
+                        <path class="check" d="M168.057,176,180.1,188.045l7.9-7.9,3.324-3.324,12.186-12.186" transform="translate(-159 -151.342)"/>
+                      </svg>
+                      <span>JavaScript</span>
+                </label>
+            </div>
+        </div>
+        <button class="" id="startBtn">Start Quiz</button>
+
+        <div class="quiz-header hidden" id="quiz-header">
+            <h2 id="question">Question Text</h2>
+            <ul> <!-- short key: ul>li*4>input+label -->
+                <li>
+                    <input
+                        type="radio"
+                        id="a"
+                        name="answer"
+                        class="answer">
+                    <label id="a_text" for="a">Question</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="b"
+                        name="answer"
+                        class="answer">
+                    <label id="b_text" for="b">Question</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="c"
+                        name="answer"
+                        class="answer">
+                    <label id="c_text" for="c">Question</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="d"
+                        name="answer"
+                        class="answer">
+                    <label id="d_text" for="d">Question</label>
+                </li>
+            </ul>
+        </div>
+
+        <button class="hidden" id="submit">Submit</button>
+    </div>
+</body>
+</html>
