@@ -324,20 +324,12 @@ function showResults() {
         for (let a=0; a<selectedAnswers.length; a++) {
             if (j === a) {
                 if (selectedAnswers[a] == optionsInput1.id) {
-                    console.log('a ist gleich');
-                    console.log(optionsInput1);
                     optionsInput1.setAttribute("checked", "checked");
                 } else if (selectedAnswers[a] == optionsInput2.id) {
-                    console.log('b ist gleich');
-                    console.log(optionsInput2);
                     optionsInput2.setAttribute("checked", "checked");
                 } else if (selectedAnswers[a] == optionsInput3.id) {
-                    console.log('c ist gleich');
-                    console.log(optionsInput3);
                     optionsInput3.setAttribute("checked", "checked");
                 } else if (selectedAnswers[a] == optionsInput4.id) {
-                    console.log('d ist gleich');
-                    console.log(optionsInput4);
                     optionsInput4.setAttribute("checked", "checked");
                 }
             }
@@ -470,7 +462,6 @@ submitBtn.addEventListener('click', () => {
         }
 
         selectedAnswers.push(answer);
-        console.log(selectedAnswers);
 
         currentQuiz++;
 
