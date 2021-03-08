@@ -66,6 +66,7 @@ function addMeal(mealData, random = false) {
     `;
 
     const mealsFav_Arr = JSON.parse(localStorage.mealIds);
+    mealsFav_Arr === null ? [] : mealsFav_Arr;
 
     const mealsFavBtn = meal.querySelectorAll('.fav-btn');
     const lastFavChild = mealsFavBtn[mealsFavBtn.length-1];
@@ -157,6 +158,7 @@ function addMealFav(mealData) {
 
     btn.addEventListener('click', () => {
         const mealsFav_Arr = JSON.parse(localStorage.mealIds);
+        mealsFav_Arr === null ? [] : mealsFav_Arr;
 
         const mealsFavBtn = document.querySelectorAll('.fav-btn');
         
