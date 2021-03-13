@@ -1,5 +1,4 @@
 // https://www.weatherbit.io/api/weather-current
-// weatherIcons from https://www.amcharts.com/
 
 // ask for API Key
 let apiQuestion = prompt('Before we start, please enter your API-Key first. You can get that for free on https://www.weatherbit.io/pricing or you can also just ask me.');
@@ -21,7 +20,6 @@ weather.temperature = {
 // API key
 const key = apiQuestion;
 // const key = "YOUR_API_KEY";
-// const key = "136b879bc20c44db92ab9fef62158cf8"; //weatherbit.io
 
 // check if browser supports geolocation
 if ('geolocation' in navigator) {
