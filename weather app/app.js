@@ -90,6 +90,7 @@ function displayWeather() {
 
     if(checkDayTime() === true) {
         container.style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 32%, rgb(163, 228, 255) 91%, rgb(120, 232, 255) 100%)';
+        body.style.background = 'ghostwhite';
     } else {
         container.style.background = 'linear-gradient(0deg, rgb(255, 255, 255) 32%, rgb(26 0 56) 91%, rgb(23 0 51) 100%)';
         appTitle.style.color = '#FFF';
