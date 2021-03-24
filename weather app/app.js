@@ -4,6 +4,7 @@
 let apiQuestion = prompt('Before we start, please enter your API-Key first. You can get that for free on https://www.weatherbit.io/pricing or you can also just ask me.');
 
 // select elements
+const body = document.querySelector('body');
 const iconElement = document.querySelector('.weather-icon');
 const tempElement = document.querySelector('.temperature-value p');
 const feelslikeElement = document.querySelector('.feels-like');
@@ -90,7 +91,7 @@ function displayWeather() {
 
     if(checkDayTime() === true) {
         container.style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 32%, rgb(163, 228, 255) 91%, rgb(120, 232, 255) 100%)';
-        body.style.background = 'ghostwhite';
+        body.style.backgroundColor = 'ghostwhite';
     } else {
         container.style.background = 'linear-gradient(0deg, rgb(255, 255, 255) 32%, rgb(26 0 56) 91%, rgb(23 0 51) 100%)';
         appTitle.style.color = '#FFF';
