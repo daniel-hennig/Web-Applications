@@ -6,9 +6,13 @@ let apiQuestion = prompt('Before we start, please enter your API-Key first. You 
 // select elements
 const iconElement = document.querySelector('.weather-icon');
 const tempElement = document.querySelector('.temperature-value p');
+const feelslikeElement = document.querySelector('.feels-like');
+const humidityElement = document.querySelector('.humidity');
 const descElement = document.querySelector('.temperature-description p');
 const locationElement = document.querySelector('.location p');
 const notificationElement = document.querySelector('.notification');
+const container = document.querySelector('.container');
+const appTitle = document.querySelector('.app-title p');
 
 // app data
 const weather = {};
@@ -47,15 +51,15 @@ function showError(error) {
 function getWeather(latitude, longitude) {
     let api = `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${key}`;
 
-    // console.log(api);
-
     fetch(api)
         .then(function(response) {
             let data = response.json();
             return data;
         })
         .then(function(data) {
-            weather.temperature.value = data.data[0].app_temp;
+            weather.temperature.value = data.data[0].temp;
+            weather.feelsTemp = data.data[0].app_temp;
+            weather.relativeHumidity = Math.floor(data.data[0].rh);
             weather.description = data.data[0].weather.description;
             weather.iconId = data.data[0].weather.icon;
             weather.city = data.data[0].city_name;
@@ -66,12 +70,30 @@ function getWeather(latitude, longitude) {
         });
 }
 
+// set the right background to UI regarding to day or night time
+function checkDayTime() {
+    if(weather.iconId.includes('d')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // display weather to UI
 function displayWeather() {
     iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    feelslikeElement.innerHTML = `feels like ${weather.feelsTemp}°`;
+    humidityElement.innerHTML = ` / humidity ${weather.relativeHumidity}`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+
+    if(checkDayTime() === true) {
+        container.style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 32%, rgb(163, 228, 255) 91%, rgb(120, 232, 255) 100%)';
+    } else {
+        container.style.background = 'linear-gradient(0deg, rgb(255, 255, 255) 32%, rgb(26 0 56) 91%, rgb(23 0 51) 100%)';
+        appTitle.style.color = '#FFF';
+    }
 }
 
 // C to F conversion
